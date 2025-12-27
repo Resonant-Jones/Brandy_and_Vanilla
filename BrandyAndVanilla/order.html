@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cake | Brandy & Vanilla</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://js.stripe.com/v3/"></script> <!-- Stripe JS -->
+    <style>
+        .order-form {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: var(--spacing-sm);
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--color-indigo);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+        }
+        .form-row {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-terracotta);
+            text-align: right;
+            margin: var(--spacing-md) 0;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Brandy & Vanilla</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="order.html" style="color: var(--color-terracotta);">Order Online</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">Order Your Cake</h1>
+            <p class="text-center" style="margin-bottom: var(--spacing-md);">Limited availability per week. Please order at least 3 days in advance.</p>
+
+            <form class="order-form" id="cakeOrderForm">
+                <!-- Cake Selection -->
+                <div class="form-group">
+                    <label class="form-label">Select Cake Flavor</label>
+                    <select class="form-control" id="cakeFlavor" required>
+                        <option value="" disabled selected>Choose a flavor...</option>
+                        <option value="classic" data-price="45">Classic Dominican (Pineapple) - $45</option>
+                        <option value="dulce" data-price="50">Dulce de Leche - $50</option>
+                        <option value="guava" data-price="48">Guava Dream - $48</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Size</label>
+                        <select class="form-control" id="cakeSize">
+                            <option value="1" data-multiplier="1">6 inch (Feeds 8-10)</option>
+                            <option value="1.5" data-multiplier="1.5">8 inch (Feeds 15-20) +$20</option>
+                            <option value="2" data-multiplier="2">10 inch (Feeds 25-30) +$40</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="cakeQuantity" value="1" min="1" max="5">
+                    </div>
+                </div>
+
+                <!-- Pickup/Delivery -->
+                <div class="form-group">
+                    <label class="form-label">Delivery Method</label>
+                    <div style="display: flex; gap: 1rem;">
+                        <label><input type="radio" name="delivery" value="pickup" checked> Pickup (Dacula, GA)</label>
+                        <label><input type="radio" name="delivery" value="delivery"> Delivery (+$15, 10 mile radius)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Date Needed</label>
+                    <input type="date" class="form-control" id="dateNeeded" required>
+                </div>
+
+                <!-- Personal Info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Special Instructions / Inscription</label>
+                    <textarea class="form-control" rows="3" placeholder="Happy Birthday..."></textarea>
+                </div>
+
+                <div class="total-price" id="totalPrice">Total: $45.00</div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to Payment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Brandy & Vanilla</p>
+        </div>
+    </footer>
+
+    <script src="scripts/order.js"></script>
+</body>
+</html>

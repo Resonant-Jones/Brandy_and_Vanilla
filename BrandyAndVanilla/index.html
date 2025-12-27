@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandy & Vanilla | Dominican Heritage Cakes</title>
+    <meta name="description" content="Premium Dominican cakes by Josie. Heritage-driven baking in Dacula, Georgia. Order custom cakes, meringues, and more.">
+    <link rel="stylesheet" href="styles/index.css">
+    <!-- Favicon placeholder -->
+    <link rel="icon" href="assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Brandy & Vanilla</a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="order.html">Order Online</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>Taste the Heritage</h1>
+            <p>Authentic Dominican cakes, baked with love and legacy in Dacula, GA.</p>
+            <a href="order.html" class="btn btn-primary">Order Now</a>
+        </div>
+    </header>
+
+    <!-- Product Showcase -->
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="text-center">Our Signature Cakes</h2>
+            <p class="text-center text-gold text-serif">Handcrafted with premium ingredients</p>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <img src="assets/images/meringue_cake.png" alt="Classic Dominican Cake with Meringue" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Classic Dominican</h3>
+                        <p class="product-price">From $45</p>
+                        <p>Moist vanilla cake with our signature pineapple filling and suspended meringue icing.</p>
+                        <br>
+                        <a href="order.html?product=classic" class="btn btn-secondary">Select</a>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <img src="assets/images/dulce_de_leche_cake.png" alt="Dulce de Leche Delight" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Dulce de Leche</h3>
+                        <p class="product-price">From $50</p>
+                        <p>Rich caramel notes paired with a light, airy sponge. A family favorite.</p>
+                        <br>
+                        <a href="order.html?product=dulce" class="btn btn-secondary">Select</a>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <img src="assets/images/guava_cake.png" alt="Guava Dream" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Guava Dream</h3>
+                        <p class="product-price">From $48</p>
+                        <p>Tropical guava jam filling nestled between layers of buttery cake.</p>
+                        <br>
+                        <a href="order.html?product=guava" class="btn btn-secondary">Select</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Snippet -->
+    <section class="section story-section">
+        <div class="container story-content">
+            <div class="story-text">
+                <h2>A Legacy of Baking</h2>
+                <p>Brandy & Vanilla is more than a bakery; it's a tribute to the flavors of the Dominican Republic. Josie brings decades of tradition to every batter, ensuring that each bite transports you home.</p>
+                <br>
+                <a href="about.html" class="btn btn-primary">Read Our Story</a>
+            </div>
+            <img src="assets/images/baking_scene.png" alt="Josie baking in the kitchen" class="story-image">
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="text-center">Love Notes</h2>
+            <div class="testimonial-card">
+                <p class="quote">"The best Dominican cake I've had since I left the island. The meringue is perfection!"</p>
+                <p class="author">— Maria R.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Ordered for my wedding and it was the highlight of the dessert table. Stunning and delicious."</p>
+                <p class="author">— Sarah & James</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <h3 class="text-gold">Brandy & Vanilla</h3>
+            <p>Dacula, Georgia</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">Story</a>
+                <a href="order.html">Order</a>
+                <a href="admin.html">Admin</a> <!-- Hidden in real prod usually, but here for demo -->
+            </div>
+            
+            <div class="newsletter-signup">
+                <p>Join our list for seasonal specials</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+            
+            <br>
+            <p>&copy; 2025 Brandy & Vanilla. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Brandy & Vanilla</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <style>
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: var(--color-indigo);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+        }
+        .sidebar h2 {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar li {
+            margin-bottom: var(--spacing-sm);
+        }
+        .sidebar a {
+            color: var(--color-cream);
+            display: block;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: rgba(255,255,255,0.1);
+        }
+        .main-content {
+            flex: 1;
+            padding: var(--spacing-md);
+            background-color: #f4f4f9;
+        }
+        .card {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .stat-card {
+            background: white;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-terracotta);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            color: var(--color-indigo);
+        }
+        .status-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .status-new { background-color: #e0f2fe; color: #0369a1; }
+        .status-completed { background-color: #dcfce7; color: #15803d; }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>B&V Admin</h2>
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="index.html" style="margin-top: 2rem; border: 1px solid rgba(255,255,255,0.2);">Back to Site</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h1>Dashboard</h1>
+                <div class="user-profile">Hello, Josie</div>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <h3>Weekly Orders</h3>
+                    <div class="stat-number">12</div>
+                    <p>Limit: 20</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Revenue (Week)</h3>
+                    <div class="stat-number">$540</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <div class="stat-number" style="color: var(--color-gold);">3</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Populated by JS -->
+                        <tr>
+                            <td>#1023</td>
+                            <td>Ana Garcia</td>
+                            <td>1x Classic (8")</td>
+                            <td>$65.00</td>
+                            <td><span class="status-badge status-new">New</span></td>
+                            <td><button class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1022</td>
+                            <td>John Doe</td>
+                            <td>2x Dulce de Leche (6")</td>
+                            <td>$100.00</td>
+                            <td><span class="status-badge status-completed">Completed</span></td>
+                            <td><button class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>Quick Actions</h2>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-primary">Add New Product</button>
+                    <button class="btn btn-secondary">Update Availability</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
